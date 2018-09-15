@@ -6,32 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
     <section>
         <div id="persons">
-            <div class="person">
-                <h1 class="name"></h1>
-                <div class="details">
-                    <button>details</button>
-                    <div class="moreDetails"></div>
+            <template id="student_template">
+                <div class="person">
+                    <h2 class="firstName"></h2>
+                    <h2 class="lastName"></h2>
+                    <div class="details">
+                        <button>details</button>
+                        <div class="moreDetails"></div>
+                    </div>
                 </div>
-            </div>
+            </template>
         </div>
     </section>
 
 
-    <template>
-        <div class="person">
-            <h1 class="name"></h1>
-            <div class="details">
-                <button>details</button>
-                <div class="moreDetails"></div>
-            </div>
-        </div>
-    </template>
+
 </body>
+
+<script src="frontend.js"></script>
+<script src="backend.js"></script>
 
 </html>

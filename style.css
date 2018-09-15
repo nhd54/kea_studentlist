@@ -1,0 +1,13 @@
+#persons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.person {
+  display: grid;
+  grid-template-columns: 35% 20% 20%;
+}
+
+h2 {
+  font-size: 12px;
+}
