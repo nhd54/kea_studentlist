@@ -3,7 +3,7 @@
 window.addEventListener("DOMContentLoaded", init);
 
 const allStudents = [];
-let currentStudent = [];
+let currentStudents = [];
 let jsonurl = "students.json";
 const Student_prototype = {
   firstName: "",
@@ -27,20 +27,16 @@ function fetchData() {
       return response.json();
     })
     .then(function(jsondata) {
-      console.log(jsondata);
-
       fillStudents(jsondata);
 
-      displayList(allStudents);
+      currentStudents = allStudents;
+
+      displayList(currentStudents);
     });
 }
 
 function init() {
-  console.log("vi er igang");
-
   fetchData();
-
-  console.log(allStudents);
 }
 
 function fillStudents(studentNames) {
@@ -64,4 +60,41 @@ function listOfStudents() {
   return str;
 }
 
-console.log(listOfStudents);
+function sortByFirstName() {
+  currentStudents.sort(byFirstName);
+  console.log(currentStudents);
+  function byFirstName(a, b) {
+    if (a.firstName < b.firstName) {
+      return -1;
+    } else if (a.firstName > b.firstName) {
+      return 1;
+    } else {
+      return 0;
+    }
+  }
+}
+
+function sortByLastName() {
+  currentStudents.sort(byLastName);
+  console.log(currentStudents);
+  function byLastName(a, b) {
+    if (a.lastName < b.lastName) {
+      return -1;
+    } else {
+      return 1;
+    }
+  }
+}
+
+function deleteStudent(studentId) {
+  // function that returns true when student.id = studentId
+  const index = allStudents.findIndex(findStudent);
+  allStudents.splice(index, 1);
+  function findStudent(student) {
+    if (student.id === studentId) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+}

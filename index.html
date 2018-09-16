@@ -12,21 +12,30 @@
 <body>
 
     <section>
+        <div id="sorting">
+            <button id="sort_first">First Name</button>
+            <button id="sort_last">Last Name</button>
+        </div>
         <div id="persons">
-            <template id="student_template">
-                <div class="person">
-                    <h2 class="firstName"></h2>
-                    <h2 class="lastName"></h2>
-                    <div class="details">
-                        <button>details</button>
-                        <div class="moreDetails"></div>
-                    </div>
-                </div>
-            </template>
+
+
         </div>
     </section>
 
+    <template id="student_template">
+        <div class="person">
+            <h2 class="firstName"></h2>
 
+
+            <div class="buttons">
+                <button>Delete</button>
+                <button>Details</button>
+
+            </div>
+            <h2 class="lastName"></h2>
+            <div class="moreDetails">more details then ever before</div>
+        </div>
+    </template>
 
 </body>
 

@@ -1,13 +1,88 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #9498a8;
+}
 #persons {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+}
+.person {
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: 30% 25% 45%;
+  background-color: #6882a0;
+  border-radius: 20px;
 }
 
-.person {
+#sorting {
+  grid-column: span 3;
+}
+.buttons {
   display: grid;
-  grid-template-columns: 35% 20% 20%;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+#sorting > button {
+  width: 10%;
+}
+
+button {
+  height: 50%;
+  align-self: end;
+  border-radius: 10%;
+  background-color: lightgray;
+  width: 100%;
+  border: 1px solid black;
 }
 
 h2 {
-  font-size: 12px;
+  padding: 0 0 10px 10px;
+  font-size: 22px;
+  color: black;
+}
+.firstName {
+  grid-column: span 2;
+  align-self: end;
+}
+.lastName {
+  grid-column: span 2;
+}
+
+.moreDetails {
+  display: none;
+  color: white;
+}
+
+.fly-out {
+  animation-name: fly-out_kf;
+  animation-duration: 1.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fly-out_kf {
+  0% {
+    transform: translateX(0);
+  }
+  99.999% {
+    transform: translateX(-105vh);
+  }
+  100% {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #persons {
+    grid-template-columns: 1fr;
+  }
+  h2 {
+    font-size: 13px;
+  }
 }
